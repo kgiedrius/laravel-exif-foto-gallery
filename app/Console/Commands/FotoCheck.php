@@ -51,8 +51,10 @@ class FotoCheck extends Command
         $files = File::allFiles( Config::get( 'images.source_path' ) );
         $extensions = [ ];
         foreach ( $files as $file ) {
-            echo $file."\n";
-            @$extensions[ pathinfo( $file, PATHINFO_EXTENSION ) ] += 1;
+            $extension = strtolower(pathinfo( $file, PATHINFO_EXTENSION ));
+            @$extensions[ $extension ] += 1;
+            if ($extension != 'jpg')
+                echo $file."\n";
         }
         print_R($extensions);
     }
