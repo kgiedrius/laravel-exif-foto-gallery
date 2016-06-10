@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'source_path' => dirname(__DIR__).'/storage/app/files_to_index'
+    'source_path' => env('IMAGES_SOURCE_PATH', 'smtp'),
 ];

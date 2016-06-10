@@ -3,6 +3,7 @@
 namespace App\Console;
 
 use App\Console\Commands\FotoIndex;
+use App\Console\Commands\FotoCheck;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -14,18 +15,19 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-         FotoIndex::class,
+        FotoIndex::class,
+        FotoCheck::class
     ];
 
     /**
      * Define the application's command schedule.
      *
-     * @param  \Illuminate\Console\Scheduling\Schedule  $schedule
+     * @param  \Illuminate\Console\Scheduling\Schedule $schedule
      * @return void
      */
-    protected function schedule(Schedule $schedule)
+    protected function schedule( Schedule $schedule )
     {
-         $schedule->command('foto:index')
-                  ->hourly();
+        $schedule->command( 'foto:index' )
+            ->hourly();
     }
 }
