@@ -14,6 +14,7 @@ class Image extends Model
     protected $fillable = [
         'path',
         'file_name',
+        'path_hash',
         'file_hash',
         'exif_date_time',
         'exif_width',
@@ -25,4 +26,12 @@ class Image extends Model
         'exif_file_date_time',
         'exif_orientation'
     ];
+
+
+    public static function isIndexedFilePath( $fileName )
+    {
+        return ( new static )->where( 'path_hash', '=', md5( $fileName ) )->count() > 0 ?: false;
+    }
+
+
 }
