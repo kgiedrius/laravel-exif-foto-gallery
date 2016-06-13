@@ -77,10 +77,26 @@ class FotoIndex extends Command
                         'exif_orientation'     => isset( $exif['Orientation']) ? $exif['Orientation'] : '-',
                     ] );
                 } catch ( \Exception $e ) {
+                    ImageModel::create( [
+                        'path'                 => dirname( $file ),
+                        'path_hash'            => $pathHash,
+                        'file_name'            => basename( $file ),
+                        'file_hash'            => md5_file( $file ),
+                        'exif_date_time'       =>  date('Y-m-d H:i:s', filemtime($file)),
+                        'exif_width'           => '-',
+                        'exif_height'          => '-',
+                        'exif_camera_model'    => '-',
+                        'exif_iso'             => '-',
+                        'exif_focal_length_mm' => '-',
+                        'exif_file_size'       => '-',
+                        'exif_file_date_time'  => '-',
+                        'exif_orientation'     => '-',
+                    ] );
+
                     echo $e->getMessage() .':'. $file."\n";
                 }
             } else {
-                echo "Skipping2: $file";
+                echo "Skipping2: $file\n";
             }
         }
 
