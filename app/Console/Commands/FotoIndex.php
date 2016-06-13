@@ -66,22 +66,21 @@ class FotoIndex extends Command
                         'path_hash'            => $pathHash,
                         'file_name'            => basename( $file ),
                         'file_hash'            => md5_file( $file ),
-                        'exif_date_time'       => $exif['DateTime'],
+                        'exif_date_time'       => isset($exif['DateTime']) ? $exif['DateTime'] : date('Y-m-d H:i:s', filemtime($file)),
                         'exif_width'           => $exif['COMPUTED']['Width'],
                         'exif_height'          => $exif['COMPUTED']['Height'],
-                        'exif_camera_model'    => $exif['Model'],
-                        'exif_iso'             => $exif['ISOSpeedRatings'],
+                        'exif_camera_model'    => isset( $exif['Model'] ) ? $exif['Model'] : '-',
+                        'exif_iso'             => isset( $exif['ISOSpeedRatings'] ) ? $exif['ISOSpeedRatings'] : '-',
                         'exif_focal_length_mm' => isset( $exif['FocalLengthIn35mmFilm'] ) ?: '-',
-                        'exif_file_size'       => $exif['FileSize'],
-                        'exif_file_date_time'  => $exif['FileDateTime'],
-                        'exif_orientation'     => $exif['Orientation'],
+                        'exif_file_size'       => isset( $exif['FileSize']) ? $exif['FileSize'] : '-',
+                        'exif_file_date_time'  => isset( $exif['FileDateTime']) ? $exif['FileDateTime'] : '-',
+                        'exif_orientation'     => isset( $exif['Orientation']) ? $exif['Orientation'] : '-',
                     ] );
                 } catch ( \Exception $e ) {
                     echo $e->getMessage() . "\n";
                 }
-            }
-            else{
-                echo  "Skipping2: $file";
+            } else {
+                echo "Skipping2: $file";
             }
         }
 
