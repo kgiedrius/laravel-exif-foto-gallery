@@ -29,7 +29,7 @@ class FotoIndex extends Command
      *
      * @var string
      */
-    protected $description = 'Command description';
+    protected $description = 'Index fotos';
 
     /**
      * Create a new command instance.

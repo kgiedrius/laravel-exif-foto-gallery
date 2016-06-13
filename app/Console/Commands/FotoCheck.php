@@ -29,7 +29,7 @@ class FotoCheck extends Command
      *
      * @var string
      */
-    protected $description = 'Command description';
+    protected $description = 'Check foto file extensions';
 
     /**
      * Create a new command instance.
