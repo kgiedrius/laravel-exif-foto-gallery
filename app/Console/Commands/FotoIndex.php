@@ -54,7 +54,7 @@ class FotoIndex extends Command
             $isIndexed = ImageModel::isIndexedFilePath( $file );
 
             if ( $isIndexed ) {
-                echo "Skipping1: $file\n";
+              //  echo "Skipping1: $file\n";
                 continue;
             }
 
@@ -77,7 +77,7 @@ class FotoIndex extends Command
                         'exif_orientation'     => isset( $exif['Orientation']) ? $exif['Orientation'] : '-',
                     ] );
                 } catch ( \Exception $e ) {
-                    echo $e->getMessage() . "\n";
+                    echo $e->getMessage() .':'. $file."\n";
                 }
             } else {
                 echo "Skipping2: $file";
