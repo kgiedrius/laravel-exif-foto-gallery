@@ -11,13 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'FotoController@index');
 
-Route::auth();
-
-Route::get('/home', 'HomeController@index');
-Route::get('/test', function () {
-    phpinfo();
-});
+//Route::auth();

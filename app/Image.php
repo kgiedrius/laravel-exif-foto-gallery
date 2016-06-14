@@ -34,4 +34,12 @@ class Image extends Model
     }
 
 
+
+    public function getPhotosList($limit=30){
+        return $this->orderBy('exif_date_time','desc')->paginate($limit);
+    }
+
+    public function getFotoUrl(){
+        return 'http://192.168.88.187/fotos/'.strrev(dirname(dirname(strrev($this->path)))).'/'.$this->file_name;
+    }
 }
