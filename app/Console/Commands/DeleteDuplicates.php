@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\Image;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
@@ -43,12 +44,10 @@ class DeleteDuplicates extends Command
         //   echo count($duplicateList);
         foreach ( $duplicateList as $record ) {
             $file = $record->path . '/' . $record->file_name . "\n";
-            $sql = "delete from images where id={$record->id}\n";
 
             echo $file . "\n";
-            echo $sql . "\n";
 
-            DB::query( $sql );
+            Image::destroy($record->id);
             unlink( $file );
         }
         //   DB::Select()
