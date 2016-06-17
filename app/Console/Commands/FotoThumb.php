@@ -46,21 +46,25 @@ class FotoThumb extends Command
         $thumbPath = Config::get( 'images.thumb_path' );
         $size = '300x200';
 
-        $photoList = DB::select( 'select * from images order by id asc limit 5' );
+        $photoList = DB::select( 'select * from images order by id asc' );
         $cnt = 0;
         $totalCount = Image::count();
         foreach ( $photoList as $record ) {
             $destinationFile = $record->file_hash . ".$size" . '.jpg';
-            $destinationDir = $thumbPath . '/' . substr( $record->file_hash, 0, 2 ).'/';
-            mkdir($destinationDir,0777,true);
+            $destinationDir = $thumbPath . '/' . substr( $record->file_hash, 0, 2 ) . '/';
+
+            if ( !file_exists( $destinationDir ) ) {
+                mkdir( $destinationDir, 0777, true );
+            }
             $destination = $destinationDir . $destinationFile;
             $cnt++;
 
-            echo round( ( $cnt / $totalCount ) * 100, 3 ) . '%: ' . $destination . "\n";
-            $destination = '"' . $destination . '"';
-            $source = '"' . $record->path . '/' . $record->file_name . '"';
-
-            exec( "convert $source -resize 300x200^ -gravity center -crop 300x200+0+0 +repage $destination " );
+            if (!file_exists($destination)) {
+                echo round( ( $cnt / $totalCount ) * 100, 3 ) . '%: ' . $destination . "\n";
+                $destination = '"' . $destination . '"';
+                $source = '"' . $record->path . '/' . $record->file_name . '"';
+                exec( "convert $source -resize $size^ -gravity center -crop $size+0+0 +repage $destination " );
+            }
         }
     }
 }
