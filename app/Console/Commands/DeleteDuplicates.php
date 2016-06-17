@@ -48,7 +48,8 @@ class DeleteDuplicates extends Command
             echo $file . "\n";
 
             Image::destroy($record->id);
-            unlink( $file );
+            File::delete($file);
+            //unlink( '"'.$file.'"' );
         }
         //   DB::Select()
 
