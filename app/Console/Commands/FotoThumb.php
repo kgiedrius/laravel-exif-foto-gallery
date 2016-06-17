@@ -4,6 +4,11 @@ namespace App\Console\Commands;
 
 use App\Image;
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
+use Intervention\Image\Facades\Image;
 
 class FotoThumb extends Command
 {
