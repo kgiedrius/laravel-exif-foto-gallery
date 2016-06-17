@@ -5,6 +5,7 @@ namespace App\Console;
 use App\Console\Commands\FotoIndex;
 use App\Console\Commands\FotoCheck;
 use App\Console\Commands\FotoClear;
+use App\Console\Commands\DeleteDuplicates;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -19,6 +20,7 @@ class Kernel extends ConsoleKernel
         FotoIndex::class,
         FotoCheck::class,
         FotoClear::class,
+        DeleteDuplicates::class,
     ];
 
     /**

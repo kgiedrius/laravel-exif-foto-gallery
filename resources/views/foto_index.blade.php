@@ -1,12 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+    <link rel="stylesheet" href="css/app.css">
+    <div class="container">
     <div class="row">
         @foreach ($photosList as $foto)
            <div class="col-md-2 ">
-               <img  style="max-width:100%; max-height:100%; margin:15px; " src="{{ $foto->getFotoUrl() }}" alt=""><br>
-           </div>
+               <a class='gallery' href='{{ $foto->getFotoUrl() }}'>
+               <img style="max-width:100%; max-height:100%; margin:15px; " src="{{ $foto->getFotoUrl() }}" alt=""><br>
+           </a></div>
         @endforeach
     </div>
 </div>

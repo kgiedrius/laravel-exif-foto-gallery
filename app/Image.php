@@ -35,7 +35,7 @@ class Image extends Model
 
 
 
-    public function getPhotosList($limit=30){
+    public function getPhotosList($limit=10){
         return $this->orderBy('exif_date_time','desc')->paginate($limit);
     }
 
