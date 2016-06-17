@@ -40,7 +40,7 @@ class DeleteDuplicates extends Command
      */
     public function handle()
     {
-        $duplicateList = DB::select( 'select * from images group by file_hash having count(*) > 1 limit 1' );
+        $duplicateList = DB::select( 'select * from images group by file_hash having count(*) > 1' );
         //   echo count($duplicateList);
         foreach ( $duplicateList as $record ) {
             $file = $record->path . '/' . $record->file_name;
@@ -49,7 +49,7 @@ class DeleteDuplicates extends Command
 
             Image::destroy($record->id);
             exec('rm "'.$file.'" ');
-            //unlink( '"'.$file.'"' );
+
         }
         //   DB::Select()
 
