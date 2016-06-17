@@ -41,13 +41,13 @@
         <entry file="file://$PROJECT_DIR$/app/Console/Commands/DeleteDuplicates.php">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.4924812">
-              <caret line="50" column="33" selection-start-line="50" selection-start-column="33" selection-end-line="50" selection-end-column="33" />
+              <caret line="50" column="24" selection-start-line="50" selection-start-column="24" selection-end-line="50" selection-end-column="24" />
               <folding>
                 <element signature="e#40#54#0#PHP" expanded="true" />
-                <marker date="1466193124000" expanded="true" signature="804:871" placeholder="select * fro..images..." />
-                <marker date="1466193124000" expanded="true" signature="1047:1211" placeholder="Delete from ..." />
-                <marker date="1466193124000" expanded="true" signature="1229:1270" placeholder="/* $files = ..." />
-                <marker date="1466193124000" expanded="true" signature="1229:1304" placeholder="/* ${$files}..." />
+                <marker date="1466193391000" expanded="true" signature="804:871" placeholder="select * fro..images..." />
+                <marker date="1466193391000" expanded="true" signature="1040:1204" placeholder="Delete from ..." />
+                <marker date="1466193391000" expanded="true" signature="1222:1263" placeholder="/* $files = ..." />
+                <marker date="1466193391000" expanded="true" signature="1222:1297" placeholder="/* ${$files}..." />
               </folding>
             </state>
           </provider>
@@ -478,7 +478,13 @@
       <option name="project" value="LOCAL" />
       <updated>1466192819308</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="updates">
+      <created>1466193129335</created>
+      <option name="number" value="00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1466193129336</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -939,13 +945,13 @@
     <entry file="file://$PROJECT_DIR$/app/Console/Commands/DeleteDuplicates.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.4924812">
-          <caret line="50" column="33" selection-start-line="50" selection-start-column="33" selection-end-line="50" selection-end-column="33" />
+          <caret line="50" column="24" selection-start-line="50" selection-start-column="24" selection-end-line="50" selection-end-column="24" />
           <folding>
             <element signature="e#40#54#0#PHP" expanded="true" />
-            <marker date="1466193124000" expanded="true" signature="804:871" placeholder="select * fro..images..." />
-            <marker date="1466193124000" expanded="true" signature="1047:1211" placeholder="Delete from ..." />
-            <marker date="1466193124000" expanded="true" signature="1229:1270" placeholder="/* $files = ..." />
-            <marker date="1466193124000" expanded="true" signature="1229:1304" placeholder="/* ${$files}..." />
+            <marker date="1466193391000" expanded="true" signature="804:871" placeholder="select * fro..images..." />
+            <marker date="1466193391000" expanded="true" signature="1040:1204" placeholder="Delete from ..." />
+            <marker date="1466193391000" expanded="true" signature="1222:1263" placeholder="/* $files = ..." />
+            <marker date="1466193391000" expanded="true" signature="1222:1297" placeholder="/* ${$files}..." />
           </folding>
         </state>
       </provider>

@@ -43,7 +43,7 @@ class DeleteDuplicates extends Command
         $duplicateList = DB::select( 'select * from images group by file_hash having count(*) > 1 limit 1' );
         //   echo count($duplicateList);
         foreach ( $duplicateList as $record ) {
-            $file = $record->path . '/' . $record->file_name . "\n";
+            $file = $record->path . '/' . $record->file_name;
 
             echo $file . "\n";
 
