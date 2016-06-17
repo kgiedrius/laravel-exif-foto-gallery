@@ -6,6 +6,8 @@ use App\Console\Commands\FotoIndex;
 use App\Console\Commands\FotoCheck;
 use App\Console\Commands\FotoClear;
 use App\Console\Commands\DeleteDuplicates;
+use App\Console\Commands\FotoThumb;
+
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -21,6 +23,7 @@ class Kernel extends ConsoleKernel
         FotoCheck::class,
         FotoClear::class,
         DeleteDuplicates::class,
+        FotoThumb::class
     ];
 
     /**
