@@ -46,7 +46,7 @@ class FotoThumb extends Command
         $thumbPath = Config::get( 'images.thumb_path' );
         $size = '300x200';
 
-        $photoList = DB::select( 'select * from images order by id asc' );
+        $photoList = DB::select( 'select * from images order by id asc limit 5000' );
         $cnt = 0;
         $totalCount = Image::count();
         foreach ( $photoList as $record ) {

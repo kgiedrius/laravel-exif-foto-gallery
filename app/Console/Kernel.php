@@ -34,7 +34,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule( Schedule $schedule )
     {
-        $schedule->command( 'foto:index' )
-            ->hourly();
+        $schedule->command( 'foto:index' )->hourly()->withoutOverlapping();
+        $schedule->command( 'foto:thumb' )->everyFiveMinutes()->withoutOverlapping();
     }
 }
