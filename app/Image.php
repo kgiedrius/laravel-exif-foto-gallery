@@ -33,13 +33,16 @@ class Image extends Model
         return ( new static )->where( 'path_hash', '=', md5( $fileName ) )->count() > 0 ?: false;
     }
 
-
-
-    public function getPhotosList($limit=10){
+    public function getPhotosList($limit=120){
         return $this->orderBy('exif_date_time','desc')->paginate($limit);
     }
 
     public function getFotoUrl(){
         return 'http://192.168.88.187/fotos/'.strrev(dirname(dirname(strrev($this->path)))).'/'.$this->file_name;
     }
+
+    public function getThumb($size){
+        return 'http://192.168.88.187/thumbs/'.substr($this->file_hash,0,2).'/'.$this->file_hash.".$size.jpg";
+    }
+
 }
