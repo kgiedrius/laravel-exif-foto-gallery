@@ -10,14 +10,14 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 
-class FotoThumb extends Command
+class FotoThumb1 extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'foto:thumb';
+    protected $signature = 'foto:thumb1';
 
     /**
      * The console command description.
@@ -46,7 +46,7 @@ class FotoThumb extends Command
         $thumbPath = Config::get( 'images.thumb_path' );
         $sizes = [ '300x200', '1200x1200' ];
 
-        $photoList = DB::select( 'select * from images where id % 2 = 0 order by id asc' );
+        $photoList = DB::select( 'select * from images where id % 2 = 1 order by id asc' );
         $cnt = 0;
         $totalCount = Image::count();
         foreach ( $photoList as $record ) {
